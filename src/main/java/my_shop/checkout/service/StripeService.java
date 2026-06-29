@@ -45,8 +45,8 @@ public class StripeService {
 
             SessionCreateParams params = SessionCreateParams.builder()
                     .setMode(SessionCreateParams.Mode.PAYMENT)
-                    .setSuccessUrl(frontendUrl + "/payment-success?session_id={CHECKOUT_SESSION_ID}")
-                    .setCancelUrl(frontendUrl + "/payment-cancel")
+                    .setSuccessUrl(frontendUrl + "/#/payment-success?session_id={CHECKOUT_SESSION_ID}")
+                    .setCancelUrl(frontendUrl + "/#/payment-cancel")
                     .setCustomerEmail(order.getUser().getEmail())
                     .addAllLineItem(stripeItems)
                     .putMetadata("order_id", order.getExternalId().toString())
